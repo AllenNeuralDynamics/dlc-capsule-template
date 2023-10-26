@@ -1,6 +1,9 @@
 # facemap-capsule-template
 Base CodeOcean capsule with a working install of [`DeepLabCut/DeepLabCut`](https://github.com/DeepLabCut/DeepLabCut).
 
+- `DeepLabCut==2.3.6` plus all required dependencies
+- tries to update to the latest version of DeepLabCut: you may wish to disable this by deleting `/environment/postInstall` 
+
 ---
 
 Developing a capsule in codoecean is a lot like developing in a local git repository: 
