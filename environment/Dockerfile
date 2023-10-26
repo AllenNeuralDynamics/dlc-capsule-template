@@ -1,4 +1,4 @@
-# hash:sha256:e47adabf34277246f189c26549e1cb21b82d3644e3bff0fedd923528cdb55048
+# hash:sha256:d127c26d3b0c92f25bd939b66c176af6a0ed072588d6363d1f96bb78753d94d7
 FROM registry.codeocean.allenneuraldynamics.org/codeocean/tensorflow:2.11-python3.10-cuda11.7.0-runtime-ubuntu22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -21,3 +21,6 @@ RUN conda install -y \
 RUN pip install -U --no-cache-dir \
     deeplabcut[tf]==2.3.6 \
     moviepy==1.0.3
+
+COPY postInstall /
+RUN /postInstall
