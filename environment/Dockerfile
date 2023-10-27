@@ -1,4 +1,4 @@
-# hash:sha256:d127c26d3b0c92f25bd939b66c176af6a0ed072588d6363d1f96bb78753d94d7
+# hash:sha256:bf984cf63c7df4f73667744c219d6caea3e25f36068becc3d9b0449e835cc4b8
 FROM registry.codeocean.allenneuraldynamics.org/codeocean/tensorflow:2.11-python3.10-cuda11.7.0-runtime-ubuntu22.04
 
 ARG DEBIAN_FRONTEND=noninteractive
@@ -10,6 +10,8 @@ COPY git-askpass /
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         ffmpeg=7:4.4.2-0ubuntu0.22.04.1 \
+        libcublas-12-0=12.0.2.224-1 \
+        libcudnn8=8.9.5.29-1+cuda12.2 \
         libsm6=2:1.2.3-1build2 \
         libxext6=2:1.3.4-1build1 \
     && rm -rf /var/lib/apt/lists/*
@@ -19,7 +21,7 @@ RUN conda install -y \
     && conda clean -ya
 
 RUN pip install -U --no-cache-dir \
-    deeplabcut[tf]==2.3.6 \
+    deeplabcut[tf]==2.3.7 \
     moviepy==1.0.3
 
 COPY postInstall /
