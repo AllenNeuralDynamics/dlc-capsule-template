@@ -1,4 +1,4 @@
-# facemap-capsule-template
+# dlc-capsule-template
 Base CodeOcean capsule template with a working install of [`DeepLabCut`](https://github.com/DeepLabCut/DeepLabCut).
 
 - `DeepLabCut==2.3.6` plus all required dependencies
